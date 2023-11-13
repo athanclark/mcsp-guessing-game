@@ -4,12 +4,14 @@ function generateRandomNum(){
 }
 
 var answer = generateRandomNum();
+var count = 0;
 
 var mainFunction = function mainFunction(){
     // Accepts a number representing the number to try to guess
     // Displays an alert telling them if they were correct, or if they should guess higher or lower
     console.log("answer", answer);
     var guess = Number(prompt('Guess a number between 1 and 100'));
+    count++;
     console.log("guess", guess);
     if (answer > guess){
         alert("Your guess is too low!");
@@ -18,7 +20,7 @@ var mainFunction = function mainFunction(){
         alert("Your guess is too high!");
         return false;
     } else if (answer === guess){
-        alert("Correct! Nice guess");
+        alert(`Correct! Nice guess - guesses: ${count}`);
         return true;
     }
 };
